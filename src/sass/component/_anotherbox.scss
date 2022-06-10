@@ -1,0 +1,35 @@
+.anotherbox{
+    @include flex(flex-start,center);
+    flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 5rem;
+   
+
+    &__item{
+
+        
+        p{
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        &__content{
+            margin-top: 1rem;
+            i{
+                margin-right: 2px;
+            }
+        }
+
+        
+    }
+   
+}
+
+.anotherbox__item__content:hover{
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    transform: translateX(5px);
+    color: $main-color;
+    
+            
+}

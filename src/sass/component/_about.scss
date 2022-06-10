@@ -1,0 +1,14 @@
+.about{
+    width: calc(100%/1.5);
+    position: relative;
+    margin: 0 auto;
+
+    @include tablet{
+        width: calc(100%/1.7);
+    }
+
+    @include mobile{
+        width: 100%;
+        padding: 2rem;
+    }
+}

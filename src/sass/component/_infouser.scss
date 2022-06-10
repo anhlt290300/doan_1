@@ -1,0 +1,41 @@
+.infoUser{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    span{
+        font-size: 1.25rem;
+        font-weight: 600;
+        text-transform: capitalize;
+    }
+    input{
+        margin-top: 10px;
+        outline: none;
+        padding: 5px;
+        width: 100%;
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    &__name{
+        display: flex;
+        justify-content: space-between;
+
+        &__item{
+            width: 48%;
+        }
+    }
+
+    &__title >span{
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+}
+
+.note > span{
+    font-weight: 300;
+    font-style: oblique;
+    
+}

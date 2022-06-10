@@ -1,0 +1,254 @@
+
+
+.header {
+    background-color: $main-bg;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 98;
+    height: $header-height;
+    transition: height 0.3s ease;
+
+    @include tablet{
+        height: $header-tablet-height;
+        box-shadow: $box-shadow;
+    }
+
+    @include mobile{
+        height: $header-mobile-height;
+    }
+
+
+    .container{
+        height: 100%;
+    }
+
+    &.shrink{
+        height: $header-shrink-height;
+        box-shadow: $box-shadow;
+        z-index: 101;
+
+        @include mobile{
+            height: $header-mobile-height;
+        }
+
+        
+    }
+    &__logo,&.shrink{
+        img{
+            height: 50px;
+        }
+    }
+
+    &__logo {
+        width: 120px;
+        margin-left: 50%;
+        transform: translateX(-60px);
+        @include flex(center,center);
+        position: absolute;
+        inset: 0;       
+        cursor: pointer;       
+        
+        img{
+            height: 120px;
+            
+        }
+        img:hover{
+            animation: dog_go 3s linear ;
+         }
+        
+        @include tablet{
+            img{
+                height: 80px
+            }
+        }
+
+        @include mobile{
+            img{
+                height: 50px;
+            }
+        }
+
+    }
+
+    &__menu{
+        @include flex(center, space-between);
+        height: 100%;
+        font-size: 1.5rem;     
+        
+        &__item ~ &__item{
+            margin-left: 39px;
+
+            @include tablet{
+                margin-left: 1.5rem;
+            }
+            @include mobile{
+                margin-left: 1rem;
+            }
+        }
+
+        &__item.active{
+            font-weight: 600;            
+            color: $main-color;
+        }
+
+        &__item:hover{
+            color: $main-color;
+        }
+
+        &__left, 
+        &__right{
+            @include flex(center,center);
+            height: 100%;
+        }
+
+        &__right{
+            font-size: 2.25rem;
+            transition: transform 0.3s ease;
+            &__item{
+                @include flex(center,center);
+
+                @include tablet{
+                    margin-left: 10px;
+                }
+
+                &__search{
+                    
+                    @include flex(center,center);
+                    background-color: none;
+                    width: 40px;
+                    height: 40px;
+                    overflow: hidden;
+                    position: relative;
+                    border-radius: 15px;   
+                    border: none;
+                    transition: all 0.5s ease-in;
+
+                    @include tablet{
+                        margin-left: 10px;
+                    }
+                    &__box{
+                        cursor: pointer;
+                        position: absolute;
+                        background-color: white;
+                        top: 0;
+                        right: 0;
+                        width: 40px;
+                        height: 40px;
+                        font-size: 25px;
+                        border: none;
+                        transition:  0.8s ; 
+                        @include flex(center,center)
+                    }
+
+                    &__box.open{
+                        background-color: rgba($color: #ccb7b7, $alpha: 0.8);
+                        height: 100%;
+
+                        
+                    }
+
+                    input{
+                        border: none;
+                        width: 100%;
+                        height: 100%;
+                        background: transparent;
+                        padding: 20px;
+                        font-size: 1.25rem;
+                        outline: none;
+                        color: $txt-main-color;
+                        
+                    }
+                }
+
+                &__search.open{
+                    width: 300px;
+                    border: 1px solid $txt-second-color;
+                }
+            }            
+
+            @include mobile{
+                font-size: 1.8rem;
+            }
+        }
+
+        
+
+        &__left{
+            
+            
+            &__close{
+                display: none;
+            }
+
+            @include tablet{
+                flex-direction: column;
+                background-color: $main-bg;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100vh;
+                justify-content: flex-start;
+                padding-top: 30px;
+                transform: translateX(-100%);
+                transition: transform 0.5s ease;
+
+                &.active{
+                    transform: translateX(0);
+                    z-index: 200;
+                }
+
+                &__item ~ &__item{
+                    margin-left: unset;
+                    margin-top: 20px;
+                }
+
+                &__close{
+                    display: block;
+                    position: absolute;
+                    left: 20px;
+                    font-size: 3rem;
+                }
+            }
+        }
+
+        &__mobile-toggle{
+            display: none;
+
+            @include tablet{
+                display: block;
+                font-size: 2.5rem;
+            }
+        }
+
+    }
+}
+
+.bx-search-alt:hover{
+    transform: rotate(-15deg);
+    transition: transform 0.3s ease;    
+    color: black;
+}
+@keyframes dog_go{
+
+    0%{
+        transform: rotate(-30deg) translateX(-25px) translateY(20px);
+    }
+    20%{
+        transform: rotate(10deg) translateX(-60px) translateY(-80px);
+    }
+    40%{
+        transform: rotate(-30deg) translateX(80px) translateY(30px);
+    }
+    60%{
+        transform: rotate(10deg) translateX(-120px) translateY(50px);
+    }
+    80%{
+        transform: rotate(-30deg) translateX(120px) translateY(-150px);
+    }
+    100%{
+        transform: rotate(10deg) translateX(-100px) translateY(20px);
+    }
+}

@@ -1,0 +1,36 @@
+.stores{
+    @include flex(flex-start,center);
+    flex-direction: column;
+
+    &__item{
+        margin-bottom: 30px;
+
+        &__title{
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        span{
+            font-weight: 600;
+        }
+
+        &__listitem{
+            @include flex(flex-start,flex-start);
+            margin-bottom: 10px;
+        }
+
+        p{
+            margin-left: 5px;
+        }
+        img{
+            object-fit:fill;
+        }
+    }
+
+    &__item:nth-child(4){
+        margin-top: -20px;
+    }
+    &__item:nth-child(2){
+        margin-top: -10px;
+    }
+}

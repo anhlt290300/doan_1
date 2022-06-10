@@ -1,0 +1,47 @@
+.introduce{
+    @include flex(flex-start,center);
+   
+    
+    flex-direction: column;
+   
+    &__item{
+              
+        
+        &__title{
+            font-size: 1.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        &__about{
+            font-size: 1.25rem;
+            margin-top: 40px;
+            @include tablet{
+                margin-top: 20px;
+            }
+            @include mobile{
+                margin-top: 10px;
+            }
+        }
+        
+
+        &__img{
+            margin-top: 40px;
+            @include tablet{
+                margin-top: 20px;
+            }
+            @include mobile{
+                margin-top: 10px;
+            }
+        }
+
+        &__logo{
+
+            width: 60%;
+            margin: 0 auto;
+        }
+    }  
+
+    
+}
+

@@ -1,0 +1,53 @@
+.footer{
+    padding: 70px 0;
+    box-shadow: $box-shadow;
+    font-size: 1.25rem;
+    @include mobile{
+        p{
+            font-size: 1.5rem;
+        }
+    }
+    &__logo{
+        height: 38px;
+    }
+
+    &__about{
+        margin-bottom: 2rem;
+        
+        p{
+            font-size: 1.25rem;
+        }
+        &__logo{
+            @include flex(center,center);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+            img{
+                height: 9rem;
+            }
+        }
+
+        &__logo:hover{
+            transform: translateY(-5px);
+            a{
+                img{
+                    transform: scaleX(1.1);
+                }
+            }
+        }
+    }
+
+    &__title{
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+
+    &__content{
+        p{
+            margin-bottom: 1.25rem;
+            font-size: 1.25rem;
+        }
+    }
+}
+
